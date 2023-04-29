@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('menu') %>
+    <div class="container">
+        <h1>Show Category Page</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sr. No/</th>
+                    <th>Category Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% allcategory.forEach( function(rec, i){ %>
+                    <tr>
+                        <td><%= i+1 %></td>
+                        <td>
+                            <%= rec.catname %>
+                        </td>
+                        <td>
+                            <a href="">Edit</a> | <a href="#" class="del-cat" for="<%= rec._id %>">Delete</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

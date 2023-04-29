@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('menu') %>
+    <div class="container">
+        <h1>Add Product</h1>
+
+        <form id="productForm">
+            <input type="text" id="txt" placeholder="Enter Product Name" name="proname" class="form-control" /> <br>
+            <input type="text" id="txt" placeholder="Enter Product Price" name="proprice" class="form-control" /> <br>
+            <input type="text" id="txt" placeholder="Enter Product Discount" name="prodiscount" class="form-control" /> <br>
+
+            <select name="procat" id="" class="form-control">
+                <option value="">Please Select Category</option>
+                <% catData.forEach(function(obj){ %>
+                    <option value="<%= obj._id%>"><%= obj.catname %></option>
+                <% }) %>
+            </select><br>
+            <select name="probr" id="" class="form-control">
+                <option value="">Please Select Brand</option>
+                <% brData.forEach(function(obj){ %>
+                    <option value="<%= obj._id%>"><%= obj.brname %></option>
+                <% }) %>
+            </select><br>
+            <input type="file" name="proimage" class="form-control" id="txt" /><br>
+            <textarea name="prodesc" placeholder="Enter Product Description" class="form-control"></textarea><br>
+
+            <button class="btn btn-secondary">Add</button>
+        </form>
+        <p id="sucessMsg"></p>
+    </div>
+</body>
+</html>
